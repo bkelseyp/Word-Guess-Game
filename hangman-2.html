@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Homework Test</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Here's Your Answer</h1>
+      <p class="lead">You Just Typed: <span id="user-text"><strong>...Nothing</strong></span></p>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var sticomNames = [
+      "martin",
+      "sister",
+      "prince",
+      "living",
+      "parkers"];
+    var sticomName1 = ["m", "a", "r", "t", "i", "n"];
+    var sticomName2 = ["s", "i", "s", "t", "e", "r"];
+    var sticomName3 = ["p", "a", "r", "k", "e", "r", "s"];
+    var sticomName4 = ["p", "r", "i", "n", "c", "e"];
+    var sticomName5 = ["l", "i", "v", "i", "n", "g"];
+
+    // making the argument
+    function consoleLogArray(array) {
+
+      for (var i = 0; i < array.length; i++); {
+        console.log(array[i]);
+      }
+      console.log("- - - - - - -")
+    }
+
+    // calling the function
+    consoleLogArray(sticomName1);
+    consoleLogArray(sticomName2);
+    consoleLogArray(sticomName3);
+    consoleLogArray(sticomName4);
+    consoleLogArray(sticomName5);
+    consoleLogArray(sticomNames);
+
+    function adder(x, y, z) {
+      console.log(x + y + x)
+    }
+    adder(1,2,3)
+    adder(3,3,3)
+
+    var userText = document.getElementById("user-text");
+    document.onkeyup = function (event) {
+      console.log(event.key);
+      userText.textContent = event.key;
+    };
+
+   
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>90's Hangman Game</title>
+</head>
+
+<body>
+
+    <div>
+        <p id="instructions-text">
+            <strong>Pres any key to start playing!</strong>
+            <br>Your objective is to guess my favorite 90's sticoms. You will have 12 chances until you lose.</p>
+
+        <!-- This is what the user types or onkeyup, also should display "_ _ _ _" not sure how to do that.-->
+        <p id="userchoice-text"></p>
+
+        <!-- This is the letters that the user typed -->
+        <p id="userguessed-letters"></p>
+
+        <!-- This will be the hint, whould update with every try... not sure how to do that. -->
+        <p id="computeranswer-text"></p>
+
+        <!-- These will update based on the user guess and function. -->
+        <p id="wins-text"></p>
+        <p id="losses-text"></p>
+        <p id="tries-text"></p>
+    </div>
+
+    <script>
+        var sitcomNames = ["martin", "sister", "prince", "living", "parkers"];
+        var possibleGuesses = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        var sitcomLetters = ['a', 'c', 'e', 'g', 'i', 'k', 'l', 'm', 'n', 'p', 'r', 's', 't', 'v'];
+
+        var guessedLetters = [];
+        var currentSitcom = [];
+        var currentWordIndex = [];
+
+
+        var wins = 0;
+        var losses = 0;
+        // this should change with every try.
+        var remainGuesses = 0;
+        const maxTries = 12;
+
+        var instructionsText = document.getElementById("instructions-text");
+        var userChoiceText = document.getElementById("userchoice-text");
+        var userGuessedLetters = document.getElementById("userguessed-letters");
+        var computerAnswerText = document.getElementById("computeranswer-text");
+        var winsText = document.getElementById("wins-text");
+        var lossesText = document.getElementById("losses-text");
+        var triesText = document.getElementById("tries-text");
+
+        document.onkeyup = function (event) {
+            var userGuess = event.key;
+            // var arrayLength = sitcomNames.length;
+            var computerAnswerText = sitcomNames[Math.floor(Math.random() * sitcomNames.length)];
+
+            // gueesing game begins
+            for (var i = 0; i < arrayLength; i++) {
+                var arrayLength = sitcomNames.length;
+
+                currentSitcom.push("_");
+            }
+            console.log(computerAnswerText);
+
+            sitcomNames[0].includes(userGuess);
+            sitcomNames[1].includes(userGuess);
+            sitcomNames[2].includes(userGuess);
+            sitcomNames[3].includes(userGuess);
+            sitcomNames[4].includes(userGuess);
+
+            // Hide the directions
+            instructionsText.textContent = "";
+
+            // Display the user and computer guesses, and wins/losses/ties.
+            userChoiceText.textContent = "You chose: " + userGuess;
+            userGuessedLetters.textContent = "Letters Guessed: " + userGuess; console.log(userGuess);
+            // computerAnswerText.textContent = "The computer chose: " + computerChoice1;
+            winsText.textContent = "wins: " + wins;
+            lossesText.textContent = "losses: " + losses;
+            triesText.textContent = "tries: " + maxTries;
+            UserGuessedLetters = "userguessed-letters" + userGuess;
+
+
+        };
+
+    </script>
+</body>
+
+</html>

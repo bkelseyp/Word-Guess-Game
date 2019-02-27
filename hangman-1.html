@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hangman Game: 90's Sitcoms</title>
+
+</head>
+
+
+<body>
+    <div id="container">
+        <h1>Hangman Game</h1>
+        <h2>My favorite Sitcoms: 90's Edition</h2>
+        <p>Press any key to begin. You have 12 lives before you lose, Good Luck!</p>
+
+        <body>
+        <!-- 
+            1: Write out the layout of the page "add all html"
+            2: define the possible guesses, "sitcomNames"
+            3: create an onkey event to capture what the user guesses
+            4: 
+
+            1st, I want the user to make a guess.
+            2nd, Capture that guess, and change the chances/lives 
+            3rd, Compare guess to the set answer (sitcomOptions), determine if win or lose, and lives left
+            4th, run code until win, loss, or all lives lost, i.e loss
+            5th, display user results 
+            6th, repeat game, but with new word.
+            7th, add title and image change for wins. 
+            
+        -->
+            <script type="text/javascript">
+            var sitcomOptions = [ sitcomOne,  sitcomTwo,  sitcomThree,  sitcomFour,  sitcomFive];
+                var  sitcomOne = ["m", "a", "r", "t", "i", "n"];
+                var  sitcomTwo = ["p", "a", "r", "k", "e", "r", "s"];
+                var  sitcomThree = ["s", "i", "s", "t", "e", "r"];
+                var  sitcomFour = ["p", "r", "i", "n", "c", "e"];
+                var  sitcomFive = ["s", "i", "n", "g", "l", "e"];
+
+                document.onkeyup = function() {
+                    var userguess = String.fromCharCode(event.keyCode).toLowerCase();
+                    console.log(userguess);
+
+                    var computerGuess = sitcomOptions[Math.floor[Math.random()*sitcomOptions.length]];
+                    console.log(computerGuess);
+                }
+
+            document.onkeyup = function(){
+                var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+                console.log(userGuess);
+
+                if (userGuess === "m" || userGuess === "a" || userGuess === "r" || userGuess === "t" || userGuess ===  "i" || userGuess === "n") {
+                    if (userGuess === "m" && userGuess === "a" && userGuess === "r" && computerGuess === "t" && userGuess === "i" && computerGuess === "n") {
+                        wins++;
+                    }
+          
+           {
+          wins++;
+        } 
+                    alert("You said M!");
+                } else {
+                    alert("Please try again");
+                }
+            }
+            </script>
+
+        </body>
+        
+        <!-- <header id="gameTitle">
+            <h1>Hangman Game</h1>
+            <h2>My favorite Sitcoms: 90's Edition</h2>
+        </header>
+        <section id="gameInstructions">
+            <p>Press any key to begin. You have 12 lives before you lose, Good Luck!</p>
+        </section>
+        <div id="game-div" class="panel">
+				<div id="word-display">
+					<p id="word-display-letters"></p>
+				</div>
+
+				<div id="socreboard">
+					 <p>Guessed Letters: <span id="guessed-letters"></span></p> 
+                     <p>Wins: <span id="win-count"></span></p> 
+					 <p>Losses: <span id="loss-count"></span> </p> 
+				</div>
+			</div> -->
+
+    </div>
+    <script>
+    </script>
+</body>
+</html>
